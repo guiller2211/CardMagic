@@ -104,10 +104,10 @@
     <div class="album py-5 bg-light">
       <div class="container" id="containerBuscador">
         <div class="row">
-          <div class="col" style="margin-top: auto">
+          <div class="col-auto" style="margin-top: auto">
             <p class="txt-white">Filtrar por:</p>
           </div>
-          <div class="col">
+          <div class="col-auto">
             <label for="disabledTextInput" class="form-label txt-white"
               >Tipo</label
             >
@@ -127,7 +127,7 @@
               </option>
             </select>
           </div>
-          <div class="col">
+          <div class="col-auto">
             <label for="disabledTextInput" class="form-label txt-white"
               >Rareza</label
             >
@@ -147,7 +147,7 @@
               </option>
             </select>
           </div>
-          <div class="col">
+          <div class="col-auto">
             <label for="disabledTextInput" class="form-label txt-white"
               >Buscador</label
             >
