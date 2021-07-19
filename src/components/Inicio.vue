@@ -147,7 +147,7 @@
               </option>
             </select>
           </div>
-          <div class="col-auto">
+          <div class="col">
             <label for="disabledTextInput" class="form-label txt-white"
               >Buscador</label
             >
