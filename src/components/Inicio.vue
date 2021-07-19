@@ -173,11 +173,7 @@
               style="border-radius: 14px; height: 313px; width: 226px"
             >
               <a v-on:click="info(todo.id, todo)">
-                <img
-                  :src="todo.imageUrl"
-                 
-                  :id="'img_' + todo.id"
-                />
+                <img :src="todo.imageUrl" :id="'img_' + todo.id" />
               </a>
               <!-- <div class="card-body" style="text-align: initial;background-color: black;">
                 <p class="card-text" style="color: white">
@@ -226,7 +222,7 @@ export default {
     this.getTodos();
   },
   methods: {
-   
+    ///funcion para traer informacion de la carta mediante Swal
     info: function (val, data) {
       Swal.fire({
         title: "Nombre: " + data.name,
@@ -258,9 +254,10 @@ export default {
       this.selectedType = 0;
     },
 
+    ////llamada a la api mediante get
     getTodos() {
       axios
-        .get("https://api.magicthegathering.io/v1/cards") ////llamado a la api de magic
+        .get("https://api.magicthegathering.io/v1/cards") 
         .then((response) => {
           this.todos = response.data.cards;
           var parsedobj = JSON.parse(JSON.stringify(this.todos));
@@ -277,7 +274,6 @@ export default {
             if (!unicosPoder.includes(parsedobj[i].rarity)) {
               unicosPoder.push(poderes);
             }
-            
           }
           ///fin del for
           this.poderes = unicosPoder;
@@ -295,15 +291,15 @@ export default {
         if (this.search != "") {
           this.selectedPower = 0;
           this.selectedType = 0;
-          return todo.name.match(this.search)  ;
+          return todo.name.match(this.search);
         }
         if (this.selectedType != 0) {
-          return !todo.type.indexOf(this.selectedType) ;
+          return !todo.type.indexOf(this.selectedType);
         }
         if (this.selectedPower != 0) {
           return !todo.rarity.indexOf(this.selectedPower);
         }
-
+        ////Return para que solo se muestren las que tienen imagen
         return todo.imageUrl;
       });
     },
